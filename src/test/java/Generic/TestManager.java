@@ -1,6 +1,7 @@
 package Generic;
 
 import java.lang.reflect.Method;
+
 import java.net.URL;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,6 +14,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+
 
 public class TestManager {
 
@@ -36,9 +38,9 @@ public class TestManager {
 		// TO DO : Changer le numéro de version android en fonction de votre appareil.
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
-		capabilities.setCapability("appPackage", "com.sogeti.inblue.findrive");
-		capabilities.setCapability("appActivity", "com.sogeti.inblue.findrive.MainActivity");
+		capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
 		capabilities.setCapability("noReset", "true");
+		
 
 		try {
 
