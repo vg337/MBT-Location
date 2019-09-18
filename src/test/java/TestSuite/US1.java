@@ -6,6 +6,9 @@ public class US1 extends TestSuite {
 	PROJET 7 Automatisation  / APK Rent a Car Entreprise
 	
 	IDENTIFICATION / US1
+		
+	Cas de test 1 : Mot de passe oublié 
+	
 	Liste des étapes 
 	
 0	Début
@@ -24,14 +27,22 @@ public class US1 extends TestSuite {
 13		Est-ce que le mail a été reçu ? = Oui    	  HORS SYSTEME
 14		Quelle action faire ? = Connexion			  HORS SYSTEME
 15		Renseigner nom, prenom, email                 HORS SYSTEME
-16	Renseigner email et mot de passe 
-17	Est-ce que le champ contient une adresse email enregistrée ?  = Oui
-18	Est-ce que le champ contient le mot de passe associé au compte ? = Non
-19	Affichage du message d'erreur "Echec de connexion"
-20	Renseigner nom, prenom, email 
-21	Est-ce que le champ contient une adresse email enregistrée ?  = Oui
-22	Est-ce que le champ contient le mot de passe associé au compte ? = Oui
-23	Connexion réussie , bouton réservation affiché
+
+
+	CAS de test 2 Connexion 
+	
+	Liste des étapes 
+	
+0	Début
+1	Renseigner email et mot de passe 
+2	Est-ce que le champ contient une adresse email enregistrée ?  = Oui
+3	Est-ce que le champ contient le mot de passe associé au compte ? = Non
+4	Affichage du message d'erreur "Echec de connexion"
+5	Renseigner nom, prenom, email 
+6	Est-ce que le champ contient une adresse email enregistrée ?  = Oui
+7	Est-ce que le champ contient le mot de passe associé au compte ? = Oui
+8	Connexion réussie , page d'accueil  réservation affiché
+
 	 
 	 */
 
