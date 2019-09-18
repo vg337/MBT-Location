@@ -38,7 +38,7 @@ public class TestManager {
 		// TO DO : Changer le numéro de version android en fonction de votre appareil.
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
-		capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\" + "RentACar.apk");
+		capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
 		capabilities.setCapability("noReset", "true");
 		
 
