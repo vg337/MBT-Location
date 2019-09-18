@@ -1,3 +1,9 @@
+/screenshot
+/target
+/test-output
+/src/test/java/Runner
+/src/test/resources/Features
+
 # Compiled class file
 *.class
 
