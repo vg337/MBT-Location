@@ -1,8 +1,8 @@
-package Steps;
+package TestSuite;
 
 import org.testng.annotations.Test;
 
-import Outils.TestManager;
+import Generic.TestManager;
 
 public class TestSuite extends TestManager {
 	

@@ -1,0 +1,14 @@
+﻿
+nom: wcs
+prénom: testeur
+
+@gmail
+
+mail: wcstesteur19@gmail.com
+mdp: testeur2019
+
+
+@rent a car entreprise
+
+mail: wcstesteur19@gmail.com
+mdp: testing2019
