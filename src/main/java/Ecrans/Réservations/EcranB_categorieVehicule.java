@@ -1,4 +1,4 @@
-package Pages.Réservations;
+package Ecrans.Réservations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Outils.AppliManager;
 
-public class B_categorieVehicule extends AppliManager {
+public class EcranB_categorieVehicule extends AppliManager {
 	
 	private By selectVehicule = By.xpath("//*[contains(@id, 'price_container')][1]"); // remplacer [1] par le numéro du véhicule souhaité
 	

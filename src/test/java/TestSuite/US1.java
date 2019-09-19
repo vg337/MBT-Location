@@ -3,10 +3,10 @@ package TestSuite;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import Pages.EcranFirstPage;
-import Pages.EcranAccueil;
-import Pages.EcranConnexion;
-import Pages.EcranMdpOublie;
+import Ecrans.EcranAccueil;
+import Ecrans.EcranConnexion;
+import Ecrans.EcranFirstPage;
+import Ecrans.EcranMdpOublie;
 
 public class US1 extends TestSuite {
 	
@@ -89,7 +89,7 @@ public class US1 extends TestSuite {
 		boolean eAfficheeOK;
 		
 		// 1 Lancer l'application = la page FirstPage est affichée
-		eConnex.verifEcranConnexion();
+		eAfficheeOK =eFirstPage.verifFirstPage();
 		Assert.assertTrue(eAfficheeOK);
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : First Page Passed -------------------------|");
@@ -97,7 +97,7 @@ public class US1 extends TestSuite {
 		
 		// 2 Cliquer sur Se Connecter
 		eFirstPage.clickSeConnecter();
-		Assert.assertTrue(eAfficheeOK);
+		//Assert.assertTrue(eAfficheeOK);
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : seConnecter Passed ------------------------|");
 		System.out.println("|---------------------------------------------------|");
@@ -117,7 +117,7 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		
 		// 5 Affichage du message d'erreur "Echec de connexion"
-		eConnex.verifAffichageMsgErreur();
+		eAfficheeOK = eConnex.verifAffichageMsgErreur();
 		Assert.assertTrue(eAfficheeOK);
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : Msg Erreur Passed -------------------------|");
@@ -137,8 +137,10 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		
 		// 8 Connexion réussie , page d'accueil  réservation affichée
-		eReservation.verifPageReservationAffichee();
+		eAfficheeOK = eAccueil.verifEcranAccueil();
 		Assert.assertTrue(eAfficheeOK);
+		//Note : les deux lignes ci-dessus peuvent aussi s' écrire Assert.assertTrue(eAccueil.verifEcranAccueil());
+		//Mais c'est quand même moins lisible et plus compliqué à débugger :)
 		eConnex.clickBtnConnexion();
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : CONNEXION Passed --------------------------|");

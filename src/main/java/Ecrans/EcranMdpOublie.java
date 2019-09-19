@@ -1,4 +1,4 @@
-package Pages;
+package Ecrans;
 
 import org.openqa.selenium.By;
 
