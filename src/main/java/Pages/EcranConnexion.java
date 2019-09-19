@@ -14,9 +14,6 @@ public class EcranConnexion extends AppliManager {
 	private By btnConnexion = By.xpath("//*[contains(text(), 'SE CONNECTER')]");
 	private By textEchecCo = By.xpath("//*[contains(text(), 'Échec de connexion)]");
 	
-<<<<<<< HEAD
-}
-=======
 	public void remplirChampMail(String Email) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(champEmail));
 		wait.until(ExpectedConditions.elementToBeClickable(champEmail));
