@@ -17,7 +17,7 @@ package TestSuite;
 1	Début		
 2	Sélectionner une agence Bordeaux		
 3	Sélectionner Aéroport de Bordeaux BOD		
-4	cliquer sur choisir cette agence		
+4	cliquer sur sélection		
 5	Renseigner les dates et heures de début et de fin		
 6	Est-ce que la date et l'heure de début est postérieure à la date du jour ? = Oui		
 7	Est-ce que la date et l'heure de fin est postérieure à la date de début ? = Oui		
