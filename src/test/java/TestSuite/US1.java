@@ -31,7 +31,7 @@ public class US1 extends TestSuite {
 		// Renseigner nom, prenom, email pour réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenomErrone);
 		eMdpOublie.remplirChampNom(nomErrone);
-		eMdpOublie.remplirChampMail(adresseEmailErrone);
+		eMdpOublie.remplirChampEmail(adresseEmailErrone);
 		
 		// Est-ce que le nom et le prénom et le mail sont  connus  ? = Non
 		eMdpOublie.clickEnvoyer();
@@ -45,7 +45,7 @@ public class US1 extends TestSuite {
 		// Renseigner nom, prenom, email pour demander la réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenom);
 		eMdpOublie.remplirChampNom(nom);
-		eMdpOublie.remplirChampMail(adresseEmail);
+		eMdpOublie.remplirChampEmail(adresseEmail);
 		
 		// Est-ce que le nom et le prénom et l'émail sont  connus  ? = Oui
 		eMdpOublie.clickEnvoyer();		
