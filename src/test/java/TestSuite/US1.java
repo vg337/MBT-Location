@@ -9,7 +9,7 @@ import Pages.EcranMdpOublie;
 public class US1 extends TestSuite {
 	
 	@Test
-	public void motDePasseOublie() {
+	public void us1cdt1() {
 
 		final String prenomErrone = "Ab";
 		final String nomErrone = "Cd";
@@ -54,7 +54,7 @@ public class US1 extends TestSuite {
 	
 	
 	@Test
-	public void connexion() {
+	public void us1cdt2() {
 
 		EcranConnexion eConnex = new EcranConnexion();
 		EcranFirstPage eFirstPage= new EcranFirstPage();
