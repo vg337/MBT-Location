@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 
 public class D_recapResaFin extends AppliManager {
 
-	private By annulerResa = By.xpath("\"//*[contains(text(), 'ANNULER')]");
+	private By annulerResa = By.xpath("//*[contains(text(),'ANNULER']");
 	
 	
 	public void annulerResa() {
