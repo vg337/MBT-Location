@@ -12,8 +12,6 @@ public class B_categorieVehicule extends AppliManager {
 	
 	public void coutTotal() {
 		
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		
 		//Je selectionne le véhicule 1 :
 		wait.until(ExpectedConditions.elementToBeClickable(selectVehicule));
 		driver.findElement(selectVehicule).click();

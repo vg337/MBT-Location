@@ -13,7 +13,6 @@ public class C_recapVehiculeEtChoixPaiement extends AppliManager{
 		
 	public void payerMaintenant() {
 		
-		WebDriverWait wait = new WebDriverWait(driver, 60);
 		
 		//Je selectionne le véhicule 1 :
 		wait.until(ExpectedConditions.elementToBeClickable(payerMtn));

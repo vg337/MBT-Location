@@ -45,4 +45,10 @@ public class EcranConnexion extends AppliManager {
 		return ecranCnxAffichee;
 
 	}
+	
+	public boolean verifAffichageMsgErreur() {
+		Boolean msgErrAffiche = driver.findElement(By.xpath("//*[contains(text(),'Connexion'),@clickable='false']")).isDisplayed();
+		return msgErrAffiche ;
+	}
+
 }

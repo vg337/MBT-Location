@@ -60,6 +60,7 @@ public class EcranAccueil extends AppliManager {
 			System.out.println("Cause is :" + e.getCause());
             System.out.println("Message is : " + e.getMessage());
             e.printStackTrace();
+            return false;
 		}
 		return visibilitTextReserverMaintenante;
 	}

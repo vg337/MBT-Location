@@ -26,8 +26,6 @@ public class A_newResa extends AppliManager {
 	
 	public void selectAgenceRetour(){
 		
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		
 		wait.until(ExpectedConditions.elementToBeClickable(saisieAgenceRetour));
 		
 		driver.findElement(saisieAgenceRetour).click(); //click agenceRetour
