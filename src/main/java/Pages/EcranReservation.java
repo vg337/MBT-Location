@@ -13,5 +13,7 @@ public class EcranReservation {
     private By caseHeureDepart = By.xpath("//*[contains(text(), '11:30')]"); // remplacer '11:30' par l'heure de départ choisie
     private By caseHeureArrivee = By.xpath("//*[contains(text(), '14:30')]"); // remplacer '14:30' par l'heure d'arrivée choisie
     private By btnSelectionVehicule = By.xpath("//*[contains(@id, 'price_container')][1]"); // remplacer [1] par le numéro du véhicule souhaité
+    private By btnPayerMaintenant = By.xpath("//*[contains(text(),'Payer maintenant']");
+    private By btnAnnuler = By.xpath("//*[contains(text(),'ANNULER']");
     
 }
