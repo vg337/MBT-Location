@@ -35,7 +35,7 @@ public class EcranFirstPage extends AppliManager{
 		boolean textBienvenueExist = driver.findElement(textBienvenue).isDisplayed();
         Assert.assertTrue(textBienvenueExist);
 		
-		return false;
+		return textBienvenueExist;
 		
 	}
 
