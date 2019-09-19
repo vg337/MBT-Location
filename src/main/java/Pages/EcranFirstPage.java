@@ -11,32 +11,39 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import Outils.AppliManager;
 
-
-public class EcranFirstPage extends AppliManager{
+public class EcranFirstPage extends AppliManager {
 
 	// Variables
 	private By btnConnexion = By.xpath("//*[contains(text(), 'SE CONNECTER')]");
 	private By textBienvenue = By.xpath("//*[contains(text(), 'BIENVENUE!')]");
 	private By btnInscription = By.xpath("//*[contains(text(), 'S'INSCRIRE')]");
 	private By btnInvite = By.xpath("//*[contains(text(), 'POURSUIVRE EN TANT QU’INVITÉ')]");
+	private boolean visibiliteTextBienvenue;
 
 	/*
 	 * Méthode pour vérifier qu'on soit bien sur FirstPage.
 	 */
 
 	public boolean verifFirstPage() {
-		
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(textBienvenue));
-		boolean textBienvenueExist = driver.findElement(textBienvenue).isDisplayed();
-        Assert.assertTrue(textBienvenueExist);
-		
-		return textBienvenueExist;
-		
+
+		try {
+
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(textBienvenue));
+			visibiliteTextBienvenue = driver.findElement(textBienvenue).isDisplayed();
+
+		} catch (Exception e) {
+
+			System.out.println("Cause is :" + e.getCause());
+			System.out.println("Message is : " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		return visibiliteTextBienvenue;
+
 	}
 
 	/*
@@ -46,7 +53,7 @@ public class EcranFirstPage extends AppliManager{
 	public void clickSeConnecter() {
 
 		driver.findElement(btnConnexion).click();
-		
+
 	}
 
 }
