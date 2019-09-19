@@ -18,7 +18,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class TestManager {
 
-	AppiumDriver<MobileElement> driver;
+	public static AppiumDriver<MobileElement> driver;
 	private ThreadLocal<String> testName = new ThreadLocal<>();
 
 	@BeforeSuite
