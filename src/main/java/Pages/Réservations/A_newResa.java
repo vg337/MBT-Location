@@ -1,16 +1,16 @@
 package Pages.Réservations;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class A_newResa {
+import Outils.AppliManager;
+
+public class A_newResa extends AppliManager {
 	
 	//Selection agence retour :
 	private By saisieAgenceRetour = By.xpath("//*[contains(@class, 'EditText')]");
     private By validationAgenceRetour = By.xpath("//*[contains(text(), 'SÉLECTION')]/parent::*"); //Selection agence retour
-    private String agenceVoulue = "Aéroport de Bordeaux";
     
 	//Selection dates :
 	private By selectDateDepart = By.xpath("//*[contains(@id, 'select_pickup_date_view')]");
@@ -26,12 +26,10 @@ public class A_newResa {
 	
 	public void selectAgenceRetour(){
 		
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		
 		wait.until(ExpectedConditions.elementToBeClickable(saisieAgenceRetour));
 		
-		driver.findElement(saisieAgenceRetour).click; //click agenceRetour
-		driver.findElement(validationAgenceRetour).click; //click "Selection"
+		driver.findElement(saisieAgenceRetour).click(); //click agenceRetour
+		driver.findElement(validationAgenceRetour).click(); //click "Selection"
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : selectAgenceRetour Passed -----------------|");
 		System.out.println("|---------------------------------------------------|");
@@ -43,15 +41,16 @@ public class A_newResa {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(selectDateDepart));
-		driver.findElement(selectDateDepart).click; //click date départ
+		driver.findElement(selectDateDepart).click(); 
+		//click date départ
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : btn Date Départ Passed -----------------|");
 		System.out.println("|---------------------------------------------------|");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(choixDateDepart));
-		driver.findElement(choixDateDepart).click; // choix date départ
-		driver.findElement(choixDateRetour).click;//choix date retour
-		driver.findElement(continuerVersHeures).click;//click "Continuer"
+		driver.findElement(choixDateDepart).click(); // choix date départ
+		driver.findElement(choixDateRetour).click();//choix date retour
+		driver.findElement(continuerVersHeures).click();//click "Continuer"
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : selection Dates Passed --------------------|");
 		System.out.println("|---------------------------------------------------|");
@@ -59,8 +58,11 @@ public class A_newResa {
 		//actions.doubleClick(le webElement voulu).perform;
 		
 		wait.until(ExpectedConditions.elementToBeClickable(choixHeureDepart));
-		driver.findElement(choixHeureDepart).doubleclick;//choix heure départ
-		driver.findElement(choixHeureRetour).doubleclick;//choix heure retour
+		driver.findElement(choixHeureDepart).click();//choix heure départ
+		driver.findElement(choixHeureDepart).click();//validation heure depart
+		
+		driver.findElement(choixHeureRetour).click();//choix heure retour
+		driver.findElement(choixHeureRetour).click();//validation heure retour
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : choix Heures Passed -----------------------|");
 		System.out.println("|---------------------------------------------------|");
