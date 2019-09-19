@@ -57,12 +57,12 @@ public class EcranFirstPage extends AppliManager {
 	}
 
 	/*
-	 * Méthode pour cliquer sur le bouton se connecter.
+	 * Méthode pour cliquer sur le bouton poursuivre en tant qu'invite.
 	 */
 
 	public void clickPoursuivreInvite() {
 
-
+		driver.findElement(btnInvite).click();
 		
 	}
 
