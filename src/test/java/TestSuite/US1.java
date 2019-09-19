@@ -1,46 +1,90 @@
 package TestSuite;
 
+import org.testng.annotations.Test;
+
+import Pages.EcranFirstPage;
+import Pages.EcranConnexion;
+import Pages.EcranMdpOublie;
+
 public class US1 extends TestSuite {
 	
-	/*
-	PROJET 7 Automatisation  / APK Rent a Car Entreprise
-	
-	IDENTIFICATION / US1
+	@Test
+	public void us1cdt1() {
+
+		final String prenomErrone = "Ab";
+		final String nomErrone = "Cd";
+		final String adresseEmailErrone = "ab.cd@gmail.com";
+		final String prenom = "Marilou";
+		final String nom = "Prevot";
+		final String adresseEmail = "loc.arboree@gmail.com";
+
+		EcranFirstPage eFirstPage = new EcranFirstPage();
+		EcranConnexion eConnexion = new EcranConnexion();
+		EcranMdpOublie eMdpOublie = new EcranMdpOublie();
 		
-	Cas de test 1 : Mot de passe oublié 
+		// 1 Cliquer sur Se Connecter
+		eFirstPage.clickBtnConnexion();
+		
+		// 2 Cliquer sur mot de passe oublié
+		eConnexion.clickMotDePasseOublie();
+		
+		// 3 Renseigner nom, prenom, email pour réinitialisation de mdp
+		eMdpOublie.remplirChampPrenom(prenomErrone);
+		eMdpOublie.remplirChampNom(nomErrone);
+		eMdpOublie.remplirChampEmail(adresseEmailErrone);
+		
+		// 4 Est-ce que le nom et le prénom et le mail sont  connus  ? = Non
+		eMdpOublie.clickEnvoyer();
+		
+		// 5 Pop up Contacter une agence ou annuler ?
+		eMdpOublie.popUpExists();
+		
+		// 6 Annuler 
+		eMdpOublie.clickAnnuler();
+		
+		// 7 Renseigner nom, prenom, email pour demander la réinitialisation de mdp
+		eMdpOublie.remplirChampPrenom(prenom);
+		eMdpOublie.remplirChampNom(nom);
+		eMdpOublie.remplirChampEmail(adresseEmail);
+		
+		// 8 Est-ce que le nom et le prénom et l'émail sont  connus  ? = Oui
+		eMdpOublie.clickEnvoyer();		
+		
+	}
 	
-	Liste des étapes 
 	
-0	Début
-1	Quelle action faire ? = Mot de passe oublié
-2	Renseigner nom, prenom, email pour réinitialisation de mdp
-3	Est-ce que le nom et le prénom et le mail sont  connus  ? = Non
-4	Pop up Contacter une agence ou annuler ?
-5	Annuler 
-6	Renseigner nom, prenom, email pour demander la réinitialisation de mdp
-7	Est-ce que le nom et le prénom et l'émail sont  connus  ? = Oui
-8	Envoi d'un mail de réinitialisation de mot de passe
-9		Est-ce que le mail a été reçu ? = Oui    							  HORS SYSTEME
-10		Cliquer sur le lien reçu 											  HORS SYSTEME
-11		Renseigner mail, et mot de passe , et confirmation du mot de passe 	  HORS SYSTEME
-12  Quelle action faire ? = Connexion			 
-13	Renseigner email et mot de passe          
+	@Test
+	public void us1cdt2() {
 
-	CAS de test 2 Connexion 
-	
-	Liste des étapes 
-	
-0	Début
-1	Renseigner email et mot de passe 
-2	Est-ce que le champ contient une adresse email enregistrée ?  = Oui
-3	Est-ce que le champ contient le mot de passe associé au compte ? = Non
-4	Affichage du message d'erreur "Echec de connexion"
-5	Renseigner email et mot de passe 
-6	Est-ce que le champ contient une adresse email enregistrée ?  = Oui
-7	Est-ce que le champ contient le mot de passe associé au compte ? = Oui
-8	Connexion réussie , page d'accueil  réservation affichée
-
-	 
-	 */
-
+		EcranConnexion eConnex = new EcranConnexion();
+		EcranFirstPage eFirstPage= new EcranFirstPage();
+		
+		String adresseEmail = "wcstesteur19@gmail.com";
+		String motDePasse = "testing2019";
+		String motDePasseErrone = "abcdefg99";
+		
+		// 1 Lancer l'application = la page FirstPage est affichée
+		// 2 Cliquer sur Se Connecter
+		eFirstPage.clickSeConnecter();
+		
+		// 3 Renseigner email et mot de passe erroné
+		eConnex.remplirChampMail(adresseEmail);
+		eConnex.remplirChampMdp(motDePasseErrone);
+		
+		// 4 Cliquer sur SE CONNECTER
+		eConnex.clickBtnConnexion();
+		
+		// 5 Affichage du message d'erreur "Echec de connexion"
+		eConnex.verifMsgErreurConnexion();
+		
+		// 6 Renseigner email et mot de passe
+		eConnex.remplirChampMail(adresseEmail);
+		eConnex.remplirChampMdp(motDePasse);
+		
+		// 7 Cliquer sur SE CONNECTER
+		eConnex.clickBtnConnexion();
+		
+		// 8 Connexion réussie , page d'accueil  réservation affichée
+		eConnex.verifPageReservationAffichee();
+	}
 }
