@@ -32,7 +32,7 @@ public class EcranConnexion extends AppliManager {
 		wait.until(ExpectedConditions.elementToBeClickable(btnConnexion));
 		driver.findElement(btnConnexion).click();
 	}
-	
+
 	public void clickBtnMdpOublie() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(btnMdpOublie));
 		wait.until(ExpectedConditions.elementToBeClickable(btnMdpOublie));
@@ -40,8 +40,10 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public boolean verifEcranConnexion() {
-		Boolean ecranCnxAffichee = driver.findElement(By.xpath("//*[contains(text(),'Connexion'),@clickable='false']")).isDisplayed();
+		Boolean ecranCnxAffichee = driver.findElement(By.xpath("//*[contains(text(),'Connexion'),@clickable='false']"))
+				.isDisplayed();
 		return ecranCnxAffichee;
+
 	}
 	
 	public boolean verifAffichageMsgErreur() {
