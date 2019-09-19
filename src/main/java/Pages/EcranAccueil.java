@@ -1,15 +1,11 @@
 package Pages;
 
-import java.sql.Driver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import Outils.AppliManager;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 
 /**
  * Méthode pour la page D'Accueil après première connexion.
@@ -65,6 +61,7 @@ public class EcranAccueil extends AppliManager {
 			System.out.println("Cause is :" + e.getCause());
             System.out.println("Message is : " + e.getMessage());
             e.printStackTrace();
+            return false;
 		}
 		
 	}

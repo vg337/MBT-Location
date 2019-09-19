@@ -14,8 +14,6 @@ public class D_recapResaFin extends AppliManager {
 	
 	public void annulerResa() {
 		
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		
 		//Je selectionne le véhicule 1 :
 		wait.until(ExpectedConditions.elementToBeClickable(annulerResa));
 		driver.findElement(annulerResa).click();

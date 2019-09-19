@@ -11,7 +11,6 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import Outils.AppliManager;
 
@@ -46,6 +45,16 @@ public class EcranFirstPage extends AppliManager{
 	public void clickSeConnecter() {
 
 		driver.findElement(btnConnexion).click();
+		
+	}
+
+	/*
+	 * Méthode pour cliquer sur le bouton se connecter.
+	 */
+
+	public void clickPoursuivreInvite() {
+
+
 		
 	}
 

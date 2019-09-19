@@ -42,6 +42,6 @@ public class EcranConnexion extends AppliManager {
 	public boolean verifEcranConnexion() {
 		Boolean ecranCnxAffichee = driver.findElement(By.xpath("//*[contains(text(),'Connexion'),@clickable='false']")).isDisplayed();
 		return ecranCnxAffichee;
-
+	}
 
 }

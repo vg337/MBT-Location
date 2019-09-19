@@ -7,5 +7,5 @@ import io.appium.java_client.MobileElement;
 
 public class AppliManager{
 	public static AppiumDriver<MobileElement> driver;
-	//public static WebDriverWait wait = new WebDriverWait(driver, 60);
+	public static WebDriverWait wait = new WebDriverWait(driver, 60);
 }
