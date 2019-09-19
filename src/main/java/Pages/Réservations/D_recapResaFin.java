@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 
 public class D_recapResaFin {
 
-	private By annulerResa = By.xpath("");
+	private By annulerResa = By.xpath("\"//*[contains(text(), 'ANNULER')]");
+	
 	
 	public void annulerResa() {
 		WebDriverWait wait = WebDriverWait(driver, 60);
