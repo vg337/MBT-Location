@@ -1,5 +1,6 @@
 package TestSuite;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Pages.EcranFirstPage;
@@ -24,32 +25,52 @@ public class US1 extends TestSuite {
 		
 		// 1 Cliquer sur Se Connecter
 		eFirstPage.clickSeConnecter();
+		System.out.println("|-------------------------------------------------------|");
+		System.out.println("|Step : Click se connecter Passed					    |");
+		System.out.println("|-------------------------------------------------------|");
 		
 		// 2 Cliquer sur mot de passe oublié
 		eConnexion.clickBtnMdpOublie();
+		System.out.println("|-------------------------------------------------------|");
+		System.out.println("|Step : Click mot de passe oublié Passed			    |");
+		System.out.println("|-------------------------------------------------------|");
 		
 		// 3 Renseigner nom, prenom, email pour réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenomErrone);
 		eMdpOublie.remplirChampNom(nomErrone);
 		eMdpOublie.remplirChampEmail(adresseEmailErrone);
+		System.out.println("|-------------------------------------------------------|");
+		System.out.println("|Step : Remplissage champs Passed					    |");
+		System.out.println("|-------------------------------------------------------|");
 		
 		// 4 Est-ce que le nom et le prénom et le mail sont  connus  ? = Non
 		eMdpOublie.clickEnvoyer();
+		System.out.println("|-------------------------------------------------------|");
+		System.out.println("|Step : Click envoyer Passed		     			    |");
+		System.out.println("|-------------------------------------------------------|");
 		
 		// 5 Pop up Contacter une agence ou annuler ?
 		eMdpOublie.popUpExists();
 		
 		// 6 Annuler 
 		eMdpOublie.clickAnnuler();
+		System.out.println("|-------------------------------------------------------|");
+		System.out.println("|Step : Click annuler Passed					        |");
+		System.out.println("|-------------------------------------------------------|");
 		
 		// 7 Renseigner nom, prenom, email pour demander la réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenom);
 		eMdpOublie.remplirChampNom(nom);
 		eMdpOublie.remplirChampEmail(adresseEmail);
+		System.out.println("|-------------------------------------------------------|");
+		System.out.println("|Step : Remplissage champs Passed					    |");
+		System.out.println("|-------------------------------------------------------|");
 		
 		// 8 Est-ce que le nom et le prénom et l'émail sont  connus  ? = Oui
 		eMdpOublie.clickEnvoyer();		
-		
+		System.out.println("|-------------------------------------------------------|");
+		System.out.println("|Step : Click envoyer Passed					        |");
+		System.out.println("|-------------------------------------------------------|");
 	}
 	
 	
