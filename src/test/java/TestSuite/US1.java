@@ -23,10 +23,10 @@ public class US1 extends TestSuite {
 		EcranMdpOublie eMdpOublie = new EcranMdpOublie();
 		
 		// 1 Cliquer sur Se Connecter
-		eFirstPage.clickBtnConnexion();
+		eFirstPage.clickSeConnecter();
 		
 		// 2 Cliquer sur mot de passe oublié
-		eConnexion.clickMotDePasseOublie();
+		eConnexion.clickBtnMdpOublie();
 		
 		// 3 Renseigner nom, prenom, email pour réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenomErrone);
@@ -58,6 +58,7 @@ public class US1 extends TestSuite {
 
 		EcranConnexion eConnex = new EcranConnexion();
 		EcranFirstPage eFirstPage= new EcranFirstPage();
+		EcranReservation eReservation = new EcranReservation();
 		
 		String adresseEmail = "wcstesteur19@gmail.com";
 		String motDePasse = "testing2019";
@@ -85,6 +86,6 @@ public class US1 extends TestSuite {
 		eConnex.clickBtnConnexion();
 		
 		// 8 Connexion réussie , page d'accueil  réservation affichée
-		eConnex.verifPageReservationAffichee();
+		eReservation.verifPageReservationAffichee();
 	}
 }
