@@ -3,7 +3,6 @@ package Pages;
 import org.openqa.selenium.By;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-
 /**
  * Méthode pour la page D'Accueil après première connexion.
  * @author Yassine Skiba
