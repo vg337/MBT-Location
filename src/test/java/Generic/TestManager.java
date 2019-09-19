@@ -10,7 +10,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeMethod;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -18,7 +17,6 @@ import Outils.AppliManager;
 
 public class TestManager extends AppliManager {
 
-	
 	private ThreadLocal<String> testName = new ThreadLocal<>();
 
 	@BeforeSuite
@@ -28,7 +26,7 @@ public class TestManager extends AppliManager {
 		System.out.println("------------------Test start!------------------");
 		System.out.println("===============================================");
 		System.out.println("Ouverture de l'APK.");
-		
+
 		// Mise en place des paramètres nécessaire au lancement de l'app sous Appium.
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
@@ -38,9 +36,9 @@ public class TestManager extends AppliManager {
 		// TO DO : Changer le numéro de version android en fonction de votre appareil.
 		//capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
-		capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
+		capabilities.setCapability(MobileCapabilityType.APP,
+				System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
 		capabilities.setCapability("noReset", "true");
-		
 
 		try {
 
@@ -54,18 +52,18 @@ public class TestManager extends AppliManager {
 			exp.printStackTrace();
 		}
 	}
-	
+
 	@BeforeMethod
-	public void beforeMethod(Method method){
-	   testName.set(method.getName());
+	public void beforeMethod(Method method) {
+		testName.set(method.getName());
 	}
 
 	@AfterMethod
 	public void afterMethod() {
-		System.out.println("Le test " + testName.get() + " est terminé." );
+		System.out.println("Le test " + testName.get() + " est terminé.");
 	}
 
-	//@AfterSuite
+	@AfterSuite
 	public void teardown() {
 
 		driver.quit();
