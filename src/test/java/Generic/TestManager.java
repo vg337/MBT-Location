@@ -31,12 +31,13 @@ public class TestManager {
 		
 		// Mise en place des paramètres nécessaire au lancement de l'app sous Appium.
 		DesiredCapabilities capabilities = new DesiredCapabilities();
+				
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy A3 (2017)");
 		// TO DO : Changer le UDID en fonction de votre appareil.
-		capabilities.setCapability("udid", "CLCDU18613003856");
+		capabilities.setCapability("udid", "330049a938f2c45d");
 		// TO DO : Changer le numéro de version android en fonction de votre appareil.
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.0.0");
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 		capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
 		capabilities.setCapability("noReset", "true");
