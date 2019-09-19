@@ -14,11 +14,11 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import Outils.AppliManager;
 
+public class TestManager extends AppliManager {
 
-public class TestManager {
-
-	public static AppiumDriver<MobileElement> driver;
+	
 	private ThreadLocal<String> testName = new ThreadLocal<>();
 
 	@BeforeSuite
