@@ -14,11 +14,11 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import Outils.AppliManager;
 
+public class TestManager extends AppliManager {
 
-public class TestManager {
-
-	AppiumDriver<MobileElement> driver;
+	
 	private ThreadLocal<String> testName = new ThreadLocal<>();
 
 	@BeforeSuite
@@ -34,9 +34,9 @@ public class TestManager {
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
 		// TO DO : Changer le UDID en fonction de votre appareil.
-		capabilities.setCapability("udid", "CLCDU18613003856");
+		//capabilities.setCapability("udid", "CLCDU18613003856");
 		// TO DO : Changer le numéro de version android en fonction de votre appareil.
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+		//capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 		capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
 		capabilities.setCapability("noReset", "true");
@@ -65,7 +65,7 @@ public class TestManager {
 		System.out.println("Le test " + testName.get() + " est terminé." );
 	}
 
-	@AfterSuite
+	//@AfterSuite
 	public void teardown() {
 
 		driver.quit();
