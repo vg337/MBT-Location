@@ -2,7 +2,6 @@ package Generic;
 
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.text.DateFormat;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
@@ -10,6 +9,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Outils.AppliManager;
@@ -26,6 +27,7 @@ public class TestManager extends AppliManager {
 	protected static ExtentHtmlReporter htmlreporter;
 	protected static ExtentReports extent;
 	protected static DesiredCapabilities capabilities;
+	protected static ExtentTest test;
 	
 	@BeforeSuite
 	public void setup() {
@@ -38,6 +40,9 @@ public class TestManager extends AppliManager {
 		// Création d'un Object ExtendReports et lien avec un reporter(s) 
 		extent = new ExtentReports();
 		extent.attachReporter(htmlreporter);
+		
+		// Initialisation du fichier de reporting (récupération du nom + description)
+		test = extent.createTest("Test "+ testName.get(),"Description?");
 		
 		/**
 		 * ApkDriver Setup
@@ -66,6 +71,7 @@ public class TestManager extends AppliManager {
 
 			// Ouverture de l'APK
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+			test.log(Status.PASS, "Apk open on the device !");
 		}
 
 		catch (Exception exp) {
@@ -78,11 +84,13 @@ public class TestManager extends AppliManager {
 	@BeforeMethod
 	public void beforeMethod(Method method) {
 		testName.set(method.getName());
+		test.log(Status.INFO, testName.get()+" Started !");
 	}
 
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Le test " + testName.get() + " est terminé.");
+		test.log(Status.INFO, "Test "+ testName.get() + " completed !");
 	}
 
 	@AfterSuite

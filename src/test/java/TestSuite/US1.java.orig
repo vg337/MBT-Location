@@ -1,6 +1,10 @@
 package TestSuite;
 
+<<<<<<< HEAD
+import org.junit.Assert;
+=======
 import org.testng.Assert;
+>>>>>>> 6ce33c5365e836c5754d948651ed571b10065e05
 import org.testng.annotations.Test;
 
 import Pages.EcranFirstPage;
