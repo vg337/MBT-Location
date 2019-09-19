@@ -11,5 +11,4 @@ public class EcranConnexion {
 	private By btnConnexion = By.xpath("//*[contains(text(), 'SE CONNECTER')]");
 	private By textEchecCo = By.xpath("//*[contains(text(), 'Échec de connexion)]");
 	
-	
 }
