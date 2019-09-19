@@ -56,4 +56,14 @@ public class EcranFirstPage extends AppliManager {
 
 	}
 
+	/*
+	 * Méthode pour cliquer sur le bouton se connecter.
+	 */
+
+	public void clickPoursuivreInvite() {
+
+
+		
+	}
+
 }

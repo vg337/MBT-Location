@@ -1,14 +1,14 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+
+import Outils.AppliManager;
+
 /**
  * Méthodes pour l'écran mot de passe oublié
  */
 
-
-public class EcranMdpOublie {
+public class EcranMdpOublie extends AppliManager{
 
 	// Variables
 	private By champPrenom = By.xpath("//*[contains(@resource-id, 'first_name')]");
@@ -17,8 +17,7 @@ public class EcranMdpOublie {
 	private By btnEnvoyer = By.xpath("//*[contains(text(), 'ENVOYER')]");
 	private By popUp = By.xpath("//*[contains(text(), 'Nous sommes désolés')]");
 	private By btnAnnuler = By.xpath("//*[contains(text(), 'ANNULER')]");
-	protected static AppiumDriver<MobileElement> driver;
-
+	
 	// Fonction pour remplir le champ "Prénom"
 	public void remplirChampPrenom(String prenom) {
 		driver.findElement(champPrenom).sendKeys(prenom);
