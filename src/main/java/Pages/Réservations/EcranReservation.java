@@ -1,4 +1,4 @@
-package Pages;
+package Pages.Réservations;
 
 import org.openqa.selenium.By;
 
