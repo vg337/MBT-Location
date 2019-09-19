@@ -1,6 +1,6 @@
 package Pages;
 
-/**
+/*
  * 
  * Méthode pour la first page (accueil première fois sur l'appli).
  * 
@@ -13,11 +13,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+import Outils.AppliManager;
 
 
-public class EcranFirstPage {
+public class EcranFirstPage extends AppliManager{
 
 	// Variables
 	private By btnConnexion = By.xpath("//*[contains(text(), 'SE CONNECTER')]");
