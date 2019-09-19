@@ -54,17 +54,18 @@ public class EcranAccueil extends AppliManager {
 	 */
 
 	public boolean verifEcranAccueil() {
-
+		
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(textReserverMaintenant));
 			boolean visibilitTextReserverMaintenante = driver.findElement(textReserverMaintenant).isDisplayed();
+			return visibilitTextReserverMaintenante;
 
 		} catch (Exception e) {
 			System.out.println("Cause is :" + e.getCause());
             System.out.println("Message is : " + e.getMessage());
             e.printStackTrace();
 		}
-		return visibilitTextReserverMaintenante;
+		
 	}
 }
