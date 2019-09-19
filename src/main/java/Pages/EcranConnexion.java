@@ -34,5 +34,15 @@ public class EcranConnexion extends AppliManager {
 		driver.findElement(btnConnexion).click();
 	}
 	
+	public void clickbtnMdpOublie() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(btnMdpOublie));
+		wait.until(ExpectedConditions.elementToBeClickable(btnMdpOublie));
+		driver.findElement(btnMdpOublie).click();
+	}
+	
+	public boolean verifPageConnexion() {
+		Boolean pageCnxAffichee = driver.findElement(By.xpath("//*[contains(text(),'Connexion'),@clickable='false']")).isDisplayed();
+		return pageCnxAffichee ;
+	}
 }
 >>>>>>> 12c46be22e96ce0bc007b8c2723a54f01af8e9cb
