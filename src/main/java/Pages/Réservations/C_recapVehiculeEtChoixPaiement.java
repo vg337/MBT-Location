@@ -8,8 +8,8 @@ import Outils.AppliManager;
 import org.openqa.selenium.By;
 
 public class C_recapVehiculeEtChoixPaiement extends AppliManager{
-
-	private By payerMtn = By.xpath("//*[contains(text(), 'Payer maintenant')]");
+	
+	private By payerMtn = By.xpath("//*[contains(text(),'Payer maintenant']");
 		
 	public void payerMaintenant() {
 		
