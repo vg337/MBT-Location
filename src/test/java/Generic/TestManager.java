@@ -1,24 +1,20 @@
 package Generic;
 
 import java.lang.reflect.Method;
-
 import java.net.URL;
-
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import Outils.AppliManager;
 import org.testng.annotations.BeforeMethod;
-
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 
-public class TestManager {
+public class TestManager extends AppliManager {
 
-	public static AppiumDriver<MobileElement> driver;
 	private ThreadLocal<String> testName = new ThreadLocal<>();
 
 	@BeforeSuite
