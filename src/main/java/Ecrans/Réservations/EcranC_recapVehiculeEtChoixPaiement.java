@@ -1,7 +1,6 @@
 package Ecrans.Réservations;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Outils.AppliManager;
 

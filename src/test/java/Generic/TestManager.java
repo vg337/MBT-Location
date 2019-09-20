@@ -59,14 +59,23 @@ public class TestManager extends AppliManager {
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
 		// TO DO : Changer le UDID en fonction de votre appareil.
-		capabilities.setCapability("udid", "J1AXB7604877647");
+		//capabilities.setCapability("udid", "J1AXB7604877647");
 		// TO DO : Changer le numéro de version android en fonction de votre appareil.
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1");
+		//capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1");
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 		capabilities.setCapability(MobileCapabilityType.APP,
 				System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
-		capabilities.setCapability("noReset", "true");
+		capabilities.setCapability(MobileCapabilityType.NO_RESET, "false");
+		capabilities.setCapability(MobileCapabilityType.CLEAR_SYSTEM_FILES, "true");
 
+	
+	}
+
+	@BeforeMethod
+	public void beforeMethod(Method method) {
+		testName.set(method.getName());
+		
+		//pour avoir un comportement unitaire et répétable, on doit charger et décharger l'apk avant et après chque test
 		try {
 
 			// Ouverture de l'APK
@@ -79,16 +88,14 @@ public class TestManager extends AppliManager {
 			System.out.println("Message is : " + exp.getMessage());
 			exp.printStackTrace();
 		}
-	}
-
-	@BeforeMethod
-	public void beforeMethod(Method method) {
-		testName.set(method.getName());
+		
 		test.log(Status.INFO, testName.get()+" Started !");
 	}
 
 	@AfterMethod
 	public void afterMethod() {
+		
+		driver.quit();
 		System.out.println("Le test " + testName.get() + " est terminé.");
 		test.log(Status.INFO, "Test "+ testName.get() + " completed !");
 	}
