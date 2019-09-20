@@ -18,10 +18,10 @@ import Outils.AppliManager;
 public class EcranFirstPage extends AppliManager {
 
 	// Variables
-	private By btnConnexion = By.xpath("//*[contains(text(), 'SE CONNECTER')]");
-	private By textBienvenue = By.xpath("//*[contains(text(), 'BIENVENUE!')]");
-	private By btnInscription = By.xpath("//*[contains(text(), 'S'INSCRIRE')]");
-	private By btnInvite = By.xpath("//*[contains(text(), 'POURSUIVRE EN TANT QU’INVITÉ')]");
+	private By btnConnexion = By.xpath("//*[contains(@text, 'SE CONNECTER')]");
+	private By textBienvenue = By.xpath("//*[contains(@text, 'BIENVENUE!')]");
+	private By btnInscription = By.xpath("//*[contains(@text, 'S'INSCRIRE')]");
+	private By btnInvite = By.xpath("//*[contains(@text, 'POURSUIVRE EN TANT QU’INVITÉ')]");
 	private boolean visibiliteTextBienvenue;
 
 	/*

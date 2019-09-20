@@ -16,9 +16,9 @@ import Outils.AppliManager;
 public class EcranAccueil extends AppliManager {
 
 	// Variables
-	private By btnSeConnecter = By.xpath("//*[contains(text(),'SE CONNECTER')]");
-	private By champAgenceDepart = By.xpath("//*[contains(text(),'Indiquez une agence de départ')]");
-	private By textReserverMaintenant = By.xpath("//*[contains(text(),'RESERVER MAINTENANT')]");
+	private By btnSeConnecter = By.xpath("//*[contains(@text,'SE CONNECTER')]");
+	private By champAgenceDepart = By.xpath("//*[contains(@text,'Indiquez une agence de départ')]");
+	private By textReserverMaintenant = By.xpath("//*[contains(@text,'RESERVER MAINTENANT')]");
 	private boolean visibilitTextReserverMaintenante;
 
 	/*

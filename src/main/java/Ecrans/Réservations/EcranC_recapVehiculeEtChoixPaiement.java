@@ -10,7 +10,7 @@ import org.openqa.selenium.NoSuchElementException;
 
 public class EcranC_recapVehiculeEtChoixPaiement extends AppliManager{
 	
-	private By payerMtn = By.xpath("//*[contains(text(),'Payer maintenant']");
+	private By payerMtn = By.xpath("//*[contains(@text,'Payer maintenant']");
 		
 	public void payerMaintenant() {
 		

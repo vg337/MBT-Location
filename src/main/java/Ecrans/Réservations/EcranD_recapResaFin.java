@@ -10,7 +10,7 @@ import org.openqa.selenium.NoSuchElementException;
 
 public class EcranD_recapResaFin extends AppliManager {
 
-	private By annulerResa = By.xpath("//*[contains(text(),'ANNULER']");
+	private By annulerResa = By.xpath("//*[contains(@text,'ANNULER']");
 	
 	
 	public void annulerResa() {
