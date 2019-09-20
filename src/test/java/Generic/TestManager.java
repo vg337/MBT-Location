@@ -1,5 +1,7 @@
 package Generic;
 
+import static org.testng.Assert.assertTrue;
+
 import java.lang.reflect.Method;
 import java.net.URL;
 
@@ -13,6 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import Ecrans.EcranSpinner;
 import Outils.AppliManager;
 import org.testng.annotations.BeforeMethod;
 
@@ -73,7 +76,13 @@ public class TestManager extends AppliManager {
 
 	@BeforeMethod
 	public void beforeMethod(Method method) {
+		
+		EcranSpinner eSpinner = new EcranSpinner();
+		boolean bLancementAppliOK;
+		
 		testName.set(method.getName());
+		
+		
 		
 		//pour avoir un comportement unitaire et répétable, on doit charger et décharger l'apk avant et après chque test
 		try {
@@ -81,6 +90,8 @@ public class TestManager extends AppliManager {
 			// Ouverture de l'APK
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 			test.log(Status.PASS, "Apk open on the device !");
+			bLancementAppliOK = eSpinner.attendreChargement();
+			assertTrue(bLancementAppliOK);
 		}
 
 		catch (Exception exp) {
@@ -95,7 +106,7 @@ public class TestManager extends AppliManager {
 	@AfterMethod
 	public void afterMethod() {
 		
-		driver.quit();
+		//driver.quit();
 		System.out.println("Le test " + testName.get() + " est terminé.");
 		test.log(Status.INFO, "Test "+ testName.get() + " completed !");
 	}
@@ -112,7 +123,7 @@ public class TestManager extends AppliManager {
 		 * ApkDriver Setup
 		 */
 		
-		driver.quit();
+		//driver.quit();
 		System.out.println("===============================================");
 		System.out.println("-----------------Test finish !-----------------");
 		System.out.println("===============================================");

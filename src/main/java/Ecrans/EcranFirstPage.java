@@ -9,6 +9,7 @@ package Ecrans;
  */
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -30,8 +31,7 @@ public class EcranFirstPage extends AppliManager {
 	public boolean verifFirstPage() {
 
 		try {
-
-			WebDriverWait wait = new WebDriverWait(driver, 60);
+			wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(textBienvenue));
 			visibiliteTextBienvenue = driver.findElement(textBienvenue).isDisplayed();
 
