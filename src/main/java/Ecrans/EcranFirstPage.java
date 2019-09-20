@@ -31,7 +31,7 @@ public class EcranFirstPage extends AppliManager {
 	public boolean verifFirstPage() {
 
 		try {
-			wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+			wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(textBienvenue));
 			visibiliteTextBienvenue = driver.findElement(textBienvenue).isDisplayed();
 

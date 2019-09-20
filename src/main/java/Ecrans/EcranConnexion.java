@@ -16,7 +16,7 @@ public class EcranConnexion extends AppliManager {
 	private By textEchecCo = By.xpath("//*[contains(text(), 'Échec de connexion)]");
 
 	public void remplirChampMail(String Email) {
-		wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(champEmail));
 		wait.until(ExpectedConditions.elementToBeClickable(champEmail));
 		driver.findElement(champEmail).clear();
@@ -24,7 +24,7 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public void remplirChampMdp(String mdp) {
-		wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(champMdp));
 		wait.until(ExpectedConditions.elementToBeClickable(champMdp));
 		driver.findElement(champMdp).clear();
@@ -32,14 +32,14 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public void clickBtnConnexion() {
-		wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(btnConnexion));
 		wait.until(ExpectedConditions.elementToBeClickable(btnConnexion));
 		driver.findElement(btnConnexion).click();
 	}
 
 	public void clickBtnMdpOublie() {
-		wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(btnMdpOublie));
 		wait.until(ExpectedConditions.elementToBeClickable(btnMdpOublie));
 		driver.findElement(btnMdpOublie).click();
