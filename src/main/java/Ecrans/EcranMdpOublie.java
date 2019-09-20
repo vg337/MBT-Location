@@ -17,17 +17,17 @@ public class EcranMdpOublie extends AppliManager{
 	private By champPrenom = By.xpath("//*[contains(@resource-id, 'first_name')]");
 	private By champNom = By.xpath("//*[contains(@resource-id, 'last_name')]");
 	private By champEmail = By.xpath("//*[contains(@resource-id, 'email_address')]");
-	private By btnEnvoyer = By.xpath("//*[contains(text(), 'ENVOYER')]");
-	private By popUp = By.xpath("//*[contains(text(), 'Nous sommes désolés')]");
-	private By btnAnnuler = By.xpath("//*[contains(text(), 'ANNULER')]");
-	private By textMdpOubliePage = By.xpath("(/*[contains(text(), 'Vous avez oubli')]");
+	private By btnEnvoyer = By.xpath("//*[contains(@text, 'ENVOYER')]");
+	private By popUp = By.xpath("//*[contains(@text, 'Nous sommes désolés')]");
+	private By btnAnnuler = By.xpath("//*[contains(@text, 'ANNULER')]");
+	private By textMdpOubliePage = By.xpath("(/*[contains(@text, 'Vous avez oubli')]");
 
 	private boolean existMdpOubliePage;
 	 
 	public boolean verifMdpOubliePage() {
 
 		try {
-			wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+			wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(textMdpOubliePage));
 			existMdpOubliePage = driver.findElement(textMdpOubliePage).isDisplayed();
 
