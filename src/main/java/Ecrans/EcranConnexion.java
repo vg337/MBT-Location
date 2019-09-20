@@ -13,7 +13,7 @@ public class EcranConnexion extends AppliManager {
 	private By champEmail = By.xpath("//*[contains(@resource-id, 'login_edit_user_name')]");
 	private By champMdp = By.xpath("//*[contains(@resource-id, 'login_edit_password')]");
 	private By btnConnexion = By.xpath("//*[contains(@text, 'SE CONNECTER')]");
-	private By textEchecCo = By.xpath("//*[contains(text(), 'Échec de connexion)]");
+	private By textEchecCo = By.xpath("//*[contains(@text, 'Échec de connexion)]");
 
 	public void remplirChampMail(String Email) {
 		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
