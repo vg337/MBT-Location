@@ -1,6 +1,6 @@
 
 nom: wcs
-prénom: testeur
+prï¿½nom: testeur
 
 @gmail
 
@@ -14,8 +14,8 @@ mail: wcstesteur19@gmail.com
 mdp: testing2019
 
 
-JDD - mdp oublié
+JDD - mdp oublie
 
-prénom : Marilou
-nom : Prevot
-mail : loc.arboree@gmail.com
+prï¿½nomï¿½: Marilou
+nomï¿½: Prevot
+mailï¿½: loc.arboree@gmail.com
