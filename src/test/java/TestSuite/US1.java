@@ -22,6 +22,8 @@ public class US1 extends TestManager {
 		final String prenom = "Marilou";
 		final String nom = "Prevot";
 		final String adresseEmail = "loc.arboree@gmail.com";
+		
+		boolean eAfficheeOK;
 
 		EcranFirstPage eFirstPage = new EcranFirstPage();
 		EcranConnexion eConnexion = new EcranConnexion();
@@ -29,16 +31,21 @@ public class US1 extends TestManager {
 		
 		// 1 Cliquer sur Se Connecter
 		eFirstPage.clickSeConnecter();
+		test.log(Status.PASS, "Affichage de la page d'accueil");
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Click se connecter Passed					    |");
 		System.out.println("|-------------------------------------------------------|");
-		
+				
 		// 2 Cliquer sur mot de passe oublié
+		      
 		eConnexion.clickBtnMdpOublie();
+		eAfficheeOK = eMdpOublie.verifMdpOubliePage();
+		Assert.assertTrue(eAfficheeOK);
+		test.log(Status.PASS, "Affichage de la page Réinitialisation du Mot de Passe");
 		System.out.println("|-------------------------------------------------------|");
-		System.out.println("|Step : Click mot de passe oublié Passed			    |");
+		System.out.println("|Step : Click mot de passe oublié Passed/ page affichée |");
 		System.out.println("|-------------------------------------------------------|");
-		
+				
 		// 3 Renseigner nom, prenom, email pour réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenomErrone);
 		eMdpOublie.remplirChampNom(nomErrone);
@@ -46,36 +53,41 @@ public class US1 extends TestManager {
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Remplissage champs Passed					    |");
 		System.out.println("|-------------------------------------------------------|");
-		
+				
 		// 4 Est-ce que le nom et le prénom et le mail sont  connus  ? = Non
 		eMdpOublie.clickEnvoyer();
+		test.log(Status.PASS, "Saisie du nom, prénom, mail erronés");
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Click envoyer Passed		     			    |");
 		System.out.println("|-------------------------------------------------------|");
-		
+			
 		// 5 Pop up Contacter une agence ou annuler ?
 		eMdpOublie.popUpExists();
-		
+		test.log(Status.PASS, "Pop up erreur saisie nom oi prenom ou email affiché");
+				
 		// 6 Annuler 
 		eMdpOublie.clickAnnuler();
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Click annuler Passed					        |");
 		System.out.println("|-------------------------------------------------------|");
-		
+			
 		// 7 Renseigner nom, prenom, email pour demander la réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenom);
 		eMdpOublie.remplirChampNom(nom);
 		eMdpOublie.remplirChampEmail(adresseEmail);
+		test.log(Status.PASS, "Saisie du nom, prénom, mail corrects");
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Remplissage champs Passed					    |");
 		System.out.println("|-------------------------------------------------------|");
-		
+				
 		// 8 Est-ce que le nom et le prénom et l'émail sont  connus  ? = Oui
 		eMdpOublie.clickEnvoyer();		
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Click envoyer Passed					        |");
 		System.out.println("|-------------------------------------------------------|");
-	}
+		      
+		      
+		}
 	
 	
 	@Test
