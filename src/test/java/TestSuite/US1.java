@@ -14,7 +14,7 @@ import Generic.TestManager;
 public class US1 extends TestManager {
 	
 	@Test
-	public void us1cdt1() {
+	public void us1cdt1() { 
 
 		final String prenomErrone = "Ab";
 		final String nomErrone = "Cd";
@@ -41,9 +41,9 @@ public class US1 extends TestManager {
 		eConnexion.clickBtnMdpOublie();
 		eAfficheeOK = eMdpOublie.verifMdpOubliePage();
 		Assert.assertTrue(eAfficheeOK);
-		test.log(Status.PASS, "Affichage de la page Réinitialisation du Mot de Passe");
+		test.log(Status.PASS, "Affichage de la page Reinitialisation du Mot de Passe");
 		System.out.println("|-------------------------------------------------------|");
-		System.out.println("|Step : Click mot de passe oublié Passed/ page affichée |");
+		System.out.println("|Step : Click mot de passe oublie Passed/ page affichee |");
 		System.out.println("|-------------------------------------------------------|");
 		
 		// 3 Renseigner nom, prenom, email pour réinitialisation de mdp
@@ -58,14 +58,14 @@ public class US1 extends TestManager {
 				
 		// 4 Est-ce que le nom et le prénom et le mail sont  connus  ? = Non
 		eMdpOublie.clickEnvoyer();
-		test.log(Status.INFO, "Saisie du nom, prénom, mail erronés");
+		test.log(Status.INFO, "Saisie du nom, prenom, mail errones");
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Click envoyer Passed		     			    |");
 		System.out.println("|-------------------------------------------------------|");
 			
 		// 5 Pop up Contacter une agence ou annuler ?
 		eMdpOublie.popUpExists();
-		test.log(Status.PASS, "Pop up erreur saisie nom oi prenom ou email affiché");
+		test.log(Status.PASS, "Pop up erreur saisie nom oi prenom ou email visible");
 				
 		// 6 Annuler 
 		eMdpOublie.clickAnnuler();
@@ -73,16 +73,16 @@ public class US1 extends TestManager {
 		System.out.println("|Step : Click annuler Passed					        |");
 		System.out.println("|-------------------------------------------------------|");
 			
-		// 7 Renseigner nom, prenom, email pour demander la réinitialisation de mdp
+		// 7 Renseigner nom, prenom, email pour demander la reinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenom);
 		eMdpOublie.remplirChampNom(nom);
 		eMdpOublie.remplirChampEmail(adresseEmail);
-		test.log(Status.INFO, "Saisie du nom, prénom, mail corrects");
+		test.log(Status.INFO, "Saisie du nom, prenom, mail corrects");
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Remplissage champs Passed					    |");
 		System.out.println("|-------------------------------------------------------|");
 				
-		// 8 Est-ce que le nom et le prénom et l'émail sont  connus  ? = Oui
+		// 8 Est-ce que le nom et le prenom et l'email sont  connus  ? = Oui
 		eMdpOublie.clickEnvoyer();		
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Click envoyer Passed					        |");

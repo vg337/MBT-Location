@@ -18,7 +18,7 @@ public class EcranMdpOublie extends AppliManager{
 	private By champNom = By.xpath("//*[contains(@resource-id, 'last_name')]");
 	private By champEmail = By.xpath("//*[contains(@resource-id, 'email_address')]");
 	private By btnEnvoyer = By.xpath("//*[contains(@text, 'ENVOYER')]");
-	private By popUp = By.xpath("//*[contains(@text, 'Nous sommes désolés')]");
+	private By popUp = By.xpath("//*[contains(@text, 'Nous Appeler')]");
 	private By btnAnnuler = By.xpath("//*[contains(@text, 'ANNULER')]");
 	private By affMdppOubliePage= By.id("password_header");
 	
@@ -45,16 +45,19 @@ public class EcranMdpOublie extends AppliManager{
 	
 	// Fonction pour remplir le champ "Prénom"
 	public void remplirChampPrenom(String prenom) {
+		driver.findElement(champPrenom).clear();
 		driver.findElement(champPrenom).sendKeys(prenom);
 	}
 	
 	// Fonction pour remplir le champ "Nom"
 	public void remplirChampNom(String nom) {
+		driver.findElement(champNom).clear();
 		driver.findElement(champNom).sendKeys(nom);
 	}
 	
 	// Fonction pour remplir le champ "Email"
 	public void remplirChampEmail(String email) {
+		driver.findElement(champEmail).clear();
 		driver.findElement(champEmail).sendKeys(email);
 	}
 	
@@ -65,6 +68,8 @@ public class EcranMdpOublie extends AppliManager{
 	
 	// Fonction pour vérifier l'existence de la popup d'erreur
 	public void popUpExists() {
+		wait = new WebDriverWait(driver, 10).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(popUp));
 		driver.findElement(popUp).isDisplayed();
 	}
 	
