@@ -48,7 +48,9 @@ public class US1 extends TestManager {
 		
 		// 3 Renseigner nom, prenom, email pour réinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenomErrone);
+		scrollBas();
 		eMdpOublie.remplirChampNom(nomErrone);
+		scrollBas();
 		eMdpOublie.remplirChampEmail(adresseEmailErrone);
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Remplissage champs Passed					    |");
