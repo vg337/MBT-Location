@@ -70,7 +70,8 @@ public class TestManager extends AppliManager {
 				System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
 		capabilities.setCapability(MobileCapabilityType.NO_RESET, "false");
 		capabilities.setCapability(MobileCapabilityType.CLEAR_SYSTEM_FILES, "true");
-
+		capabilities.setCapability("unicodeKeyboard", true);
+		capabilities.setCapability("resetKeyboard", true);
 	
 	}
 
