@@ -20,10 +20,10 @@ public class EcranMdpOublie extends AppliManager{
 	private By btnEnvoyer = By.xpath("//*[contains(text(), 'ENVOYER')]");
 	private By popUp = By.xpath("//*[contains(text(), 'Nous sommes désolés')]");
 	private By btnAnnuler = By.xpath("//*[contains(text(), 'ANNULER')]");
-	private By textMdpOubliePage = By.xpath("(/*[contains(text(), 'Vous avez oublié')]");
+	private By textMdpOubliePage = By.xpath("(/*[contains(text(), 'Vous avez oubli')]");
 
 	private boolean existMdpOubliePage;
-	
+	 
 	public boolean verifMdpOubliePage() {
 
 		try {
