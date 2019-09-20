@@ -1,6 +1,7 @@
 package Ecrans.Réservations;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,7 +33,7 @@ public class EcranA_newResa extends AppliManager {
 	
 	
 	public void selectAgenceRetour(){
-		
+		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.elementToBeClickable(saisieAgenceRetour));
 		
 		driver.findElement(saisieAgenceRetour).click(); //click agenceRetour
@@ -41,8 +42,7 @@ public class EcranA_newResa extends AppliManager {
 	}
 	
 	public void selectDatesHeures(String dateDepartChoisie, String dateRetourChoisie, String heureDepartChoisie, String heureRetourChoisie) {
-		
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(selectDateDepart));
 		driver.findElement(selectDateDepart).click(); 
