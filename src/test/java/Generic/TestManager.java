@@ -90,7 +90,7 @@ public class TestManager extends AppliManager {
 			// Ouverture de l'APK
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 			test.log(Status.PASS, "Apk open on the device !");
-			bLancementAppliOK = eSpinner.attendreChargement();
+			eSpinner.attendreChargement();
 		}
 
 		catch (Exception exp) {
