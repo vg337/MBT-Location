@@ -125,7 +125,7 @@ public class US1 extends TestManager {
 		eConnex.remplirChampMail(adresseEmail);
 		eConnex.remplirChampMdp(motDePasseErrone);
 		System.out.println("|---------------------------------------------------|");
-		System.out.println("| STEP : Remplissage Mail + MDP Passed -------------|");
+		System.out.println("| STEP : Remplissage Mail + MDP incorrect Passed ---|");
 		System.out.println("|---------------------------------------------------|");
 		test.log(Status.INFO, "Step 3 done");
 		

@@ -14,10 +14,11 @@ public class EcranConnexion extends AppliManager {
 	private By champEmail = By.xpath("//*[contains(@resource-id, 'login_edit_user_name')]");
 	private By champMdp = By.xpath("//*[contains(@resource-id, 'login_edit_password')]");
 	private By btnConnexion = By.xpath("//*[contains(@text, 'SE CONNECTER')]");
-	private By textEchecCo = By.xpath("//*[contains(@text, 'Échec de connexion)]");
+	private By textEchecCo = By.xpath("//*[contains(@text, 'chec de connexion')]");
+	
 
 	public void remplirChampMail(String Email) {
-		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 10).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(champEmail));
 		wait.until(ExpectedConditions.elementToBeClickable(champEmail));
 		driver.findElement(champEmail).clear();
@@ -25,7 +26,7 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public void remplirChampMdp(String mdp) {
-		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 10).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(champMdp));
 		wait.until(ExpectedConditions.elementToBeClickable(champMdp));
 		driver.findElement(champMdp).clear();
@@ -33,29 +34,29 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public void clickBtnConnexion() {
-		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 10).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(btnConnexion));
 		wait.until(ExpectedConditions.elementToBeClickable(btnConnexion));
 		driver.findElement(btnConnexion).click();
 	}
 
 	public void clickBtnMdpOublie() {
-		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 10).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(btnMdpOublie));
 		wait.until(ExpectedConditions.elementToBeClickable(btnMdpOublie));
 		driver.findElement(btnMdpOublie).click();
 	}
 
 	public boolean verifEcranConnexion() {
-		Boolean ecranCnxAffichee = driver.findElement(By.xpath("//*[contains(@text(),'Connexion'),@clickable='false']"))
-				.isDisplayed();
+		Boolean ecranCnxAffichee = driver.findElement(By.xpath("//*[contains(@text(),'Connexion'),@clickable='false']")).isDisplayed();
 		return ecranCnxAffichee;
-
 	}
 	
-	public boolean verifAffichageMsgErreur() {
-		Boolean msgErrAffiche = driver.findElement(By.xpath("//*[contains(@text(),'Connexion'),@clickable='false']")).isDisplayed();
-		return msgErrAffiche ;
+	public boolean  verifAffichageMsgErreur() {
+		wait = new WebDriverWait(driver, 10).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(textEchecCo));
+		Boolean eAffiche= driver.findElement(textEchecCo).isDisplayed();
+		return eAffiche ;
 	}
 
 }
