@@ -1,6 +1,9 @@
 package Ecrans;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Outils.AppliManager;
 
@@ -17,6 +20,27 @@ public class EcranMdpOublie extends AppliManager{
 	private By btnEnvoyer = By.xpath("//*[contains(text(), 'ENVOYER')]");
 	private By popUp = By.xpath("//*[contains(text(), 'Nous sommes désolés')]");
 	private By btnAnnuler = By.xpath("//*[contains(text(), 'ANNULER')]");
+	private By textMdpOubliePage = By.xpath("(/*[contains(text(), 'Vous avez oublié')]");
+
+	private boolean existMdpOubliePage;
+	
+	public boolean verifMdpOubliePage() {
+
+		try {
+			wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(textMdpOubliePage));
+			existMdpOubliePage = driver.findElement(textMdpOubliePage).isDisplayed();
+
+		} catch (Exception e) {
+
+			System.out.println("Cause is :" + e.getCause());
+			System.out.println("Message is : " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		return existMdpOubliePage;
+
+	}
 	
 	// Fonction pour remplir le champ "Prénom"
 	public void remplirChampPrenom(String prenom) {
