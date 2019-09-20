@@ -91,13 +91,10 @@ public class TestManager extends AppliManager {
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 			test.log(Status.PASS, "Apk open on the device !");
 			bLancementAppliOK = eSpinner.attendreChargement();
-			assertTrue(bLancementAppliOK);
 		}
 
 		catch (Exception exp) {
-			System.out.println("Cause is :" + exp.getCause());
-			System.out.println("Message is : " + exp.getMessage());
-			exp.printStackTrace();
+					
 		}
 		
 		test.log(Status.INFO, testName.get()+" Started !");

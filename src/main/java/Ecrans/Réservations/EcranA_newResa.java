@@ -11,24 +11,24 @@ public class EcranA_newResa extends AppliManager {
 	
 	//Selection agence retour :
 	private By saisieAgenceRetour = By.xpath("//*[contains(@class, 'EditText')]");
-    private By validationAgenceRetour = By.xpath("//*[contains(text(), 'SÉLECTION')]/parent::*"); //Selection agence retour
+    private By validationAgenceRetour = By.xpath("//*[contains(@text, 'SÉLECTION')]/parent::*"); //Selection agence retour
     
 	//Selection dates :
 	private By selectDateDepart = By.xpath("//*[contains(@id, 'select_pickup_date_view')]");
 	private By choixDateDepart (String dateChoisie) { 
-		return By.xpath("//*[contains(text(), '" + dateChoisie + "')]"); 
+		return By.xpath("//*[contains(@text, '" + dateChoisie + "')]"); 
 	}
 	private By choixDateRetour(String dateChoisie) { 
-		return By.xpath("//*[contains(text(), '" + dateChoisie + "')]"); 
+		return By.xpath("//*[contains(@text, '" + dateChoisie + "')]"); 
 	}
-	private By continuerVersHeures = By.xpath("//*[contains(text(), 'CONTINUER')]"); //Continuer vers heures
+	private By continuerVersHeures = By.xpath("//*[contains(@text, 'CONTINUER')]"); //Continuer vers heures
 	
 	//Selection heures :
 	private By choixHeureDepart(String heureChoisie) {
-		return By.xpath("//*[contains(text(), '" + heureChoisie + " ')]"); 
+		return By.xpath("//*[contains(@text, '" + heureChoisie + " ')]"); 
 	}
 	private By choixHeureRetour(String heureChoisie) {
-		return By.xpath("//*[contains(text(), '"+ heureChoisie +" ')]");
+		return By.xpath("//*[contains(@text, '"+ heureChoisie +" ')]");
 	}
 	
 	
