@@ -1,6 +1,7 @@
 package Ecrans;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -32,10 +33,11 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public void clickBtnConnexion() {
-		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
+		driver.findElement(champMdp).sendKeys(Keys.ENTER);
+		/*wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(btnConnexion));
 		wait.until(ExpectedConditions.elementToBeClickable(btnConnexion));
-		driver.findElement(btnConnexion).click();
+		driver.findElement(btnConnexion).click();*/
 	}
 
 	public void clickBtnMdpOublie() {
@@ -46,14 +48,14 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public boolean verifEcranConnexion() {
-		Boolean ecranCnxAffichee = driver.findElement(By.xpath("//*[contains(text(),'Connexion'),@clickable='false']"))
+		Boolean ecranCnxAffichee = driver.findElement(By.xpath("//*[contains(@text(),'Connexion'),@clickable='false']"))
 				.isDisplayed();
 		return ecranCnxAffichee;
 
 	}
 	
 	public boolean verifAffichageMsgErreur() {
-		Boolean msgErrAffiche = driver.findElement(By.xpath("//*[contains(text(),'Connexion'),@clickable='false']")).isDisplayed();
+		Boolean msgErrAffiche = driver.findElement(By.xpath("//*[contains(@text(),'Connexion'),@clickable='false']")).isDisplayed();
 		return msgErrAffiche ;
 	}
 
