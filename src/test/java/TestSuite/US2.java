@@ -1,7 +1,8 @@
 package TestSuite;
 
+import Generic.TestManager;
 
-	public class US2 extends TestSuite {
+public class US2 extends TestManager {
 		
 		/*
 		
@@ -32,5 +33,5 @@ package TestSuite;
 		 
 		 */
 
-	}
+}
 
