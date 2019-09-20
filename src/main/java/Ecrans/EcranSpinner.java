@@ -17,7 +17,7 @@ public class EcranSpinner extends AppliManager {
 		
 	public boolean attendreChargement() {
 		try {
-			wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+			wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(ecranSpinner));
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(ecranSpinner));
 			return true;
