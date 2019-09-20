@@ -27,7 +27,7 @@ public class EcranMdpOublie extends AppliManager{
 	public boolean verifMdpOubliePage() {
 
 		try {
-			wait = new WebDriverWait(driver, 6000).ignoring(NoSuchElementException.class);
+			wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(textMdpOubliePage));
 			existMdpOubliePage = driver.findElement(textMdpOubliePage).isDisplayed();
 
