@@ -33,11 +33,10 @@ public class EcranConnexion extends AppliManager {
 	}
 
 	public void clickBtnConnexion() {
-		driver.findElement(champMdp).sendKeys(Keys.ENTER);
-		/*wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(btnConnexion));
 		wait.until(ExpectedConditions.elementToBeClickable(btnConnexion));
-		driver.findElement(btnConnexion).click();*/
+		driver.findElement(btnConnexion).click();
 	}
 
 	public void clickBtnMdpOublie() {

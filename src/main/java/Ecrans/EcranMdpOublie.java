@@ -20,7 +20,8 @@ public class EcranMdpOublie extends AppliManager{
 	private By btnEnvoyer = By.xpath("//*[contains(@text, 'ENVOYER')]");
 	private By popUp = By.xpath("//*[contains(@text, 'Nous sommes désolés')]");
 	private By btnAnnuler = By.xpath("//*[contains(@text, 'ANNULER')]");
-	private By textMdpOubliePage = By.xpath("(/*[contains(@text, 'Vous avez oubli')]");
+	private By affMdppOubliePage= By.id("password_header");
+	
 
 	private boolean existMdpOubliePage;
 	 
@@ -28,8 +29,8 @@ public class EcranMdpOublie extends AppliManager{
 
 		try {
 			wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(textMdpOubliePage));
-			existMdpOubliePage = driver.findElement(textMdpOubliePage).isDisplayed();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(affMdppOubliePage));
+			existMdpOubliePage = driver.findElement(affMdppOubliePage).isDisplayed();
 
 		} catch (Exception e) {
 
