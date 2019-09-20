@@ -3,12 +3,15 @@ package TestSuite;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 import Ecrans.EcranAccueil;
 import Ecrans.EcranConnexion;
 import Ecrans.EcranFirstPage;
 import Ecrans.EcranMdpOublie;
+import Generic.TestManager;
 
-public class US1 extends TestSuite {
+public class US1 extends TestManager {
 	
 	@Test
 	public void us1cdt1() {
@@ -94,6 +97,7 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : First Page Passed -------------------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 1 done");
 		
 		// 2 Cliquer sur Se Connecter
 		eFirstPage.clickSeConnecter();
@@ -101,6 +105,7 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : seConnecter Passed ------------------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 2 done");
 		
 		// 3 Renseigner email et mot de passe erroné
 		
@@ -109,12 +114,14 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : Remplissage Mail + MDP Passed -------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 3 done");
 		
 		// 4 Cliquer sur SE CONNECTER
 		eConnex.clickBtnConnexion();
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : btn SE CONNECTER Passed -------------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 4 done");
 		
 		// 5 Affichage du message d'erreur "Echec de connexion"
 		eAfficheeOK = eConnex.verifAffichageMsgErreur();
@@ -122,6 +129,7 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : Msg Erreur Passed -------------------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 5 done");
 		
 		// 6 Renseigner email et mot de passe
 		eConnex.remplirChampMail(adresseEmail);
@@ -129,12 +137,14 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : Remplissage Mail + MDP Passed -------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 6 done");
 		
 		// 7 Cliquer sur SE CONNECTER
 		eConnex.clickBtnConnexion();
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : btn SE CONNECTER Passed -------------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 7 done");
 		
 		// 8 Connexion réussie , page d'accueil  réservation affichée
 		eAfficheeOK = eAccueil.verifEcranAccueil();
@@ -145,6 +155,7 @@ public class US1 extends TestSuite {
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : CONNEXION Passed --------------------------|");
 		System.out.println("|---------------------------------------------------|");
+		test.log(Status.INFO, "Step 8 done");
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : FIN US 1 CAS 2 Passed ---------------------|");
 		System.out.println("|---------------------------------------------------|");
