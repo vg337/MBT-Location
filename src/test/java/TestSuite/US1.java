@@ -76,7 +76,6 @@ public class US1 extends TestManager {
 		// 7 Renseigner nom, prenom, email pour demander la reinitialisation de mdp
 		scrollTop();
 		eMdpOublie.remplirChampPrenom(prenom);
-		//scrollBas();
 		eMdpOublie.remplirChampNom(nom);
 		scrollBas();
 		eMdpOublie.remplirChampEmail(adresseEmail);
@@ -152,6 +151,7 @@ public class US1 extends TestManager {
 		
 		// 6 Renseigner email et mot de passe
 		scrollTop();
+		scrollBas();
 		eConnex.remplirChampMail(adresseEmail);
 		scrollBas();
 		eConnex.remplirChampMdp(motDePasse);
@@ -168,12 +168,12 @@ public class US1 extends TestManager {
 		System.out.println("|---------------------------------------------------|");
 		test.log(Status.INFO, "Step 7 done");
 		
-		// 8 Connexion réussie , page d'accueil  réservation affichée
+		// 8 Connexion reuussie , page d'accueil  reservation affichee
 		eAfficheeOK = eAccueil.verifEcranAccueil();
 		Assert.assertTrue(eAfficheeOK);
 		//Note : les deux lignes ci-dessus peuvent aussi s' écrire Assert.assertTrue(eAccueil.verifEcranAccueil());
 		//Mais c'est quand même moins lisible et plus compliqué à débugger :)
-		eConnex.clickBtnConnexion();
+		eAccueil.clickBtnContinuer();
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : CONNEXION Passed --------------------------|");
 		System.out.println("|---------------------------------------------------|");

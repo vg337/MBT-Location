@@ -70,9 +70,10 @@ public class TestManager extends AppliManager {
 				System.getProperty("user.dir") + "\\src\\test\\resources\\apk\\RentACar.apk");
 		capabilities.setCapability(MobileCapabilityType.NO_RESET, "false");
 		capabilities.setCapability(MobileCapabilityType.CLEAR_SYSTEM_FILES, "true");
-		// capabilities.setCapability("unicodeKeyboard", true);
-		// capabilities.setCapability("resetKeyboard", true);
-	
+		capabilities.setCapability("connectHardwareKeyboard", false);
+		capabilities.setCapability("resetKeyboard", true);
+		
+		
 	}
 
 	@BeforeMethod
@@ -85,7 +86,7 @@ public class TestManager extends AppliManager {
 		
 		
 		
-		//pour avoir un comportement unitaire et répétable, on doit charger et décharger l'apk avant et après chque test
+		//pour avoir un comportement unitaire et repetable, on doit charger et decharger l'apk avant et apr�s chque test
 		try {
 
 			// Ouverture de l'APK
@@ -105,7 +106,7 @@ public class TestManager extends AppliManager {
 	public void afterMethod() {
 		
 		//driver.quit();
-		System.out.println("Le test " + testName.get() + " est terminé.");
+		System.out.println("Le test " + testName.get() + " est termin�.");
 		test.log(Status.INFO, "Test "+ testName.get() + " completed !");
 	}
 
@@ -120,7 +121,9 @@ public class TestManager extends AppliManager {
 		/**
 		 * ApkDriver Setup
 		 */
-		
+		// re-activer clavier 
+		capabilities.setCapability("connectHardwareKeyboard", true);
+		capabilities.setCapability("resetKeyboard", true);
 		//driver.quit();
 		System.out.println("===============================================");
 		System.out.println("-----------------Test finish !-----------------");

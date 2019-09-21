@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import Outils.AppliManager;
 
 /**
- * Méthodes pour l'écran mot de passe oublié
+ * M�thodes pour l'écran mot de passe oubli�
  */
 
 public class EcranMdpOublie extends AppliManager{
@@ -24,11 +24,12 @@ public class EcranMdpOublie extends AppliManager{
 	
 
 	private boolean existMdpOubliePage;
+	private int p_wait = 30;
 	 
-	public boolean verifMdpOubliePage() {
+	public boolean verifMdpOubliePage() { 
 
 		try {
-			wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
+			wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(affMdppOubliePage));
 			existMdpOubliePage = driver.findElement(affMdppOubliePage).isDisplayed();
 
@@ -43,38 +44,53 @@ public class EcranMdpOublie extends AppliManager{
 
 	}
 	
-	// Fonction pour remplir le champ "Prénom"
+	// Fonction pour remplir le champ "Pr�nom"
 	public void remplirChampPrenom(String prenom) {
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(champPrenom));
+		wait.until(ExpectedConditions.elementToBeClickable(champPrenom));
 		driver.findElement(champPrenom).clear();
 		driver.findElement(champPrenom).sendKeys(prenom);
 	}
 	
 	// Fonction pour remplir le champ "Nom"
 	public void remplirChampNom(String nom) {
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(champNom));
+		wait.until(ExpectedConditions.elementToBeClickable(champNom));
 		driver.findElement(champNom).clear();
 		driver.findElement(champNom).sendKeys(nom);
 	}
 	
 	// Fonction pour remplir le champ "Email"
 	public void remplirChampEmail(String email) {
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(champEmail));
+		wait.until(ExpectedConditions.elementToBeClickable(champEmail));
 		driver.findElement(champEmail).clear();
 		driver.findElement(champEmail).sendKeys(email);
 	}
 	
 	// Fonction pour tenter de se connecter
 	public void clickEnvoyer() {
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(btnEnvoyer));
+		wait.until(ExpectedConditions.elementToBeClickable(btnEnvoyer));
 		driver.findElement(btnEnvoyer).click();
 	}
 	
 	// Fonction pour vérifier l'existence de la popup d'erreur
 	public void popUpExists() {
-		wait = new WebDriverWait(driver, 10).ignoring(NoSuchElementException.class);
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(popUp));
 		driver.findElement(popUp).isDisplayed();
 	}
 	
 	// Fonction pour fermer la popup d'erreur
 	public void clickAnnuler() {
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(btnAnnuler));
+		wait.until(ExpectedConditions.elementToBeClickable(btnAnnuler));
 		driver.findElement(btnAnnuler).click();		
 	}
 }

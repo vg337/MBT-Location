@@ -1,6 +1,7 @@
 package Ecrans;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,10 +17,12 @@ import Outils.AppliManager;
 public class EcranAccueil extends AppliManager {
 
 	// Variables
+	private By btnContinuer = By.xpath("//*[contains(@text, 'CONTINUER')]");
 	private By btnSeConnecter = By.xpath("//*[contains(@text,'SE CONNECTER')]");
 	private By champAgenceDepart = By.xpath("//*[contains(@text,'Indiquez une agence de départ')]");
 	private By textReserverMaintenant = By.xpath("//*[contains(@text,'RESERVER MAINTENANT')]");
 	private boolean visibilitTextReserverMaintenante;
+	private int p_wait = 30;
 
 	/*
 	 * Méthode pour cliquer sur "Se Connecter"
@@ -64,4 +67,13 @@ public class EcranAccueil extends AppliManager {
 		}
 		return visibilitTextReserverMaintenante;
 	}
+	
+	public void clickBtnContinuer() {
+		driver.hideKeyboard();
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(btnContinuer));
+		wait.until(ExpectedConditions.elementToBeClickable(btnContinuer));
+		driver.findElement(btnContinuer).click();
+	}
+
 }
