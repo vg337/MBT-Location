@@ -46,7 +46,7 @@ public class US1 extends TestManager {
 		System.out.println("|Step : Click mot de passe oublie Passed/ page affichee |");
 		System.out.println("|-------------------------------------------------------|");
 		
-		// 3 Renseigner nom, prenom, email pour r√©initialisation de mdp
+		// 3 Renseigner nom, prenom, email pour rÈinitialisation de mdp
 		eMdpOublie.remplirChampPrenom(prenomErrone);
 		scrollBas();
 		eMdpOublie.remplirChampNom(nomErrone);
@@ -56,7 +56,7 @@ public class US1 extends TestManager {
 		System.out.println("|Step : Remplissage champs Passed					    |");
 		System.out.println("|-------------------------------------------------------|");
 				
-		// 4 Est-ce que le nom et le pr√©nom et le mail sont  connus  ? = Non
+		// 4 Est-ce que le nom et le prÈnom et le mail sont  connus  ? = Non
 		eMdpOublie.clickEnvoyer();
 		test.log(Status.INFO, "Saisie du nom, prenom, mail errones");
 		System.out.println("|-------------------------------------------------------|");
@@ -74,9 +74,13 @@ public class US1 extends TestManager {
 		System.out.println("|-------------------------------------------------------|");
 			
 		// 7 Renseigner nom, prenom, email pour demander la reinitialisation de mdp
+		scrollTop();
 		eMdpOublie.remplirChampPrenom(prenom);
+		//scrollBas();
 		eMdpOublie.remplirChampNom(nom);
+		scrollBas();
 		eMdpOublie.remplirChampEmail(adresseEmail);
+		scrollBas();
 		test.log(Status.INFO, "Saisie du nom, prenom, mail corrects");
 		System.out.println("|-------------------------------------------------------|");
 		System.out.println("|Step : Remplissage champs Passed					    |");
@@ -122,7 +126,9 @@ public class US1 extends TestManager {
 		test.log(Status.INFO, "Step 2 done");
 		
 		// 3 Renseigner email et mot de passe erron√©
+		scrollBas();
 		eConnex.remplirChampMail(adresseEmail);
+		scrollBas();
 		eConnex.remplirChampMdp(motDePasseErrone);
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : Remplissage Mail + MDP incorrect Passed ---|");
@@ -145,8 +151,11 @@ public class US1 extends TestManager {
 		test.log(Status.INFO, "Step 5 done");
 		
 		// 6 Renseigner email et mot de passe
+		scrollTop();
 		eConnex.remplirChampMail(adresseEmail);
+		scrollBas();
 		eConnex.remplirChampMdp(motDePasse);
+		scrollBas();
 		System.out.println("|---------------------------------------------------|");
 		System.out.println("| STEP : Remplissage Mail + MDP Passed -------------|");
 		System.out.println("|---------------------------------------------------|");
