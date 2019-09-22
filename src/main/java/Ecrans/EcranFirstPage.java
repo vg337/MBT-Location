@@ -21,11 +21,11 @@ public class EcranFirstPage extends AppliManager {
 	private By btnConnexion = By.xpath("//*[contains(@text, 'SE CONNECTER')]");
 	private By textBienvenue = By.xpath("//*[contains(@text, 'BIENVENUE!')]");
 	private By btnInscription = By.xpath("//*[contains(@text, 'S'INSCRIRE')]");
-	private By btnInvite = By.xpath("//*[contains(@text, 'POURSUIVRE EN TANT QU’INVITÉ')]");
+	private By btnInvite = By.xpath("//*[contains(@text, 'POURSUIVRE EN TANT')]");
 	private boolean visibiliteTextBienvenue;
 
 	/*
-	 * Méthode pour vérifier qu'on soit bien sur FirstPage.
+	 * Méthode pour verifier qu'on soit bien sur FirstPage.
 	 */
 
 	public boolean verifFirstPage() {
@@ -47,7 +47,7 @@ public class EcranFirstPage extends AppliManager {
 	}
 
 	/*
-	 * Méthode pour cliquer sur le bouton se connecter.
+	 * Methode pour cliquer sur le bouton se connecter.
 	 */
 
 	public void clickSeConnecter() {
@@ -57,7 +57,7 @@ public class EcranFirstPage extends AppliManager {
 	}
 
 	/*
-	 * Méthode pour cliquer sur le bouton poursuivre en tant qu'invite.
+	 * Methode pour cliquer sur le bouton poursuivre en tant qu'invite.
 	 */
 
 	public void clickPoursuivreInvite() {
