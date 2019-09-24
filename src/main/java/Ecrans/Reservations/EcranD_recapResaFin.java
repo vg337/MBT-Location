@@ -10,14 +10,18 @@ import org.openqa.selenium.NoSuchElementException;
 
 public class EcranD_recapResaFin extends AppliManager {
 
-	private By annulerResa = By.xpath("//*[contains(@text,'ANNULER']");
-	
+	private By btnAnnulerResa = By.xpath("//*[contains(@resource-id,'action_cancel')]");
+	private By btnConfirmAnnul = By.xpath("//*[contains(@resource-id,'button1')]");
+	Integer p_wait =30;
 	
 	public void annulerResa() {
-		wait = new WebDriverWait(driver, 60).ignoring(NoSuchElementException.class);
-		//Je selectionne le véhicule 1 :
-		wait.until(ExpectedConditions.elementToBeClickable(annulerResa));
-		driver.findElement(annulerResa).click();
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.elementToBeClickable(btnAnnulerResa));
+		driver.findElement(btnAnnulerResa).click();
+		// confirmation 
+		wait = new WebDriverWait(driver, p_wait).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.elementToBeClickable(btnConfirmAnnul));
+		driver.findElement(btnConfirmAnnul).click();
 	}
 	
 }
